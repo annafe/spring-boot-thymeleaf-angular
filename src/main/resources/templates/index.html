@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Take a look at the time zones around the world!</title>
+    <link rel="stylesheet" href="/css/main.css"/>
+    <script src="/webjars/angularjs/1.6.4/angular.js"></script>
+    <script src="/webjars/angularjs/1.6.4/angular-resource.js"></script>
+    <script src="/webjars/angularjs/1.6.4/angular-route.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.css"/>
+    <script src="/js/controller.js"></script>
+</head>
+<body>
+<div ng-app="app" ng-controller="controller">
+    <button id="btn-id" ng-click="getAllCC()">Show time zones</button>
+    <button id="btn-downl" ng-click="download()">Download a Csv</button>
+
+    <br/>
+    <table ng-show="countries.length" style="padding: 50px; width: 60%;">
+        <tr>
+            <th  align="left">abbreviation</th>
+            <th  align="left">name</th>
+            <th  align="left">UTC Offset</th>
+        </tr>
+        <tr ng-repeat="item in countries">
+            <td>{{ item.countryAbbreviation }}</td>
+            <td>{{ item.countryName }}</td>
+            <td>{{ item.utcoffset }}</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
